@@ -1,0 +1,44 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+svg {
+  display: block;
+}
+
+rect {
+  cursor: pointer;
+  fill: #eee;
+  stroke: #222;
+  stroke-width: 1;
+  transition: fill 0.2s ease-out;
+}
+
+rect.start {
+  fill: steelblue;
+}
+
+rect.end {
+  fill: forestgreen;
+}
+
+rect.blocked {
+  fill: firebrick;
+}
+
+rect.visited {
+  fill: lightsteelblue;
+}
+
+rect.path {
+  fill: darkslategray;
+}
