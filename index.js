@@ -1,3 +1,6 @@
+var animationInterval = 10;
+var cellSize = 50;
+
 class Matrix {
   constructor(cellCount, cellSize) {
     this.el = document.getElementById("root");
@@ -69,8 +72,8 @@ class Matrix {
 
   buildGraph() {
     this.graph = new Graph();
-    for (let i = 0; i < this.cellCount; i++) {
-      for (let j = 0; j < this.cellCount; j++) {
+    for (let j = 0; j < this.cellCount; j++) {
+      for (let i = 0; i < this.cellCount; i++) {
         if (this.isBlockedAt(i, j)) {
           continue;
         }
@@ -121,7 +124,7 @@ class Matrix {
   }
 
   mark(node, className) {
-    this.ms += 10;
+    this.ms += animationInterval;
     setTimeout(() => {
       const parts = node.split(",");
       const i = parseInt(parts[0], 10);
@@ -189,7 +192,6 @@ class Graph {
   }
 }
 
-var cellSize = 50;
 var base = Math.min(window.innerHeight, window.innerWidth);
 var cellCount = Math.floor(base / cellSize);
 var m = new Matrix(cellCount, cellSize);
