@@ -1,5 +1,9 @@
-var animationInterval = 10;
+var animationInterval = 5;
 var cellSize = 50;
+
+setTimeout(function() {
+  alert('Click on a few squares to create road blockers, then click on the blue square to find the shortest path.')
+}, 500);
 
 class Matrix {
   constructor(cellCount, cellSize) {
